@@ -18,8 +18,19 @@ bears$SEX<- as.factor(bears$SEX)
 bears$MONTH<- as.factor(bears$MONTH)
 ```
 
-## Model LENGTH ~ NECK  this is an example  
+## Model LENGTH ~ NECK  this is an example 
+```{r}
+plot(LENGTH~NECK,data=bears,pch=19)
+```
+This plot shows as neck circumface increase,length increases as well.The plot is primarily linear. 
 
+
+```{r}
+model.1 <- lm(LENGTH~NECK,data=bears)
+summary.lm(model.1)
+```
+
+The adjusted R-Squared is 0.7476.
 
 Compare all models that predict LENGTH other than NECK.  
 Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
@@ -28,11 +39,22 @@ Then order them from worst to best by its value of Adjusted-Rsquared (bigger is 
 
 
 
+```{r}
+plot(LENGTH~HEADLEN,data=bears,pch=19)
+```
+As headlength increases so does the length. This boxplot is linear
 ## Model LENGTH ~ HeadWTH
-
+```{r}
+model.2 <- lm(LENGTH~HEADLEN,data=bears)
+summary.lm(model.2)
+```
+The adjusted R-squared is 0.8434, bigger than the previous model's. 
 
 
 ## Model LENGTH ~ CHEST
+```{r}
+plot(LENGTH~CHEST,data=bears,pch=19)
+```
 
 
 

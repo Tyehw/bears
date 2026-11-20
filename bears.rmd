@@ -22,7 +22,8 @@ bears$MONTH<- as.factor(bears$MONTH)
 ```{r}
 plot(LENGTH~NECK,data=bears,pch=19)
 ```
-This plot shows as neck circumface increase,length increases as well.The plot is primarily linear. 
+
+This plot shows as neck circumference increase,length increases as well.The plot is primarily linear.   
 
 
 ```{r}
@@ -38,17 +39,29 @@ Then order them from worst to best by its value of Adjusted-Rsquared (bigger is 
 ## Model LENGTH ~ HEADLEN
 
 
-
 ```{r}
 plot(LENGTH~HEADLEN,data=bears,pch=19)
 ```
-As headlength increases so does the length. This boxplot is linear
-## Model LENGTH ~ HeadWTH
+
+  As headlength increases so does the length. This boxplot is linear. 
 ```{r}
 model.2 <- lm(LENGTH~HEADLEN,data=bears)
 summary.lm(model.2)
 ```
-The adjusted R-squared is 0.8434, bigger than the previous model's. 
+    The adjusted R-squared is 0.8434, bigger than the previous model's. 
+  
+
+## Model LENGTH ~ HeadWTH
+
+```{r}
+plot(LENGTH~HEADWTH,data=bears,pch=19)
+```
+
+
+```{r}
+model.3 <- lm(LENGTH~HEADWTH,data=bears)
+summary.lm(model.3)
+```
 
 
 ## Model LENGTH ~ CHEST
@@ -56,8 +69,20 @@ The adjusted R-squared is 0.8434, bigger than the previous model's.
 plot(LENGTH~CHEST,data=bears,pch=19)
 ```
 
+```{r}
+model.4 <- lm(LENGTH~CHEST,data=bears)
+summary.lm(model.4)
+```
 
 
 ## Model LENGTH ~ WEIGHT
+```{r}
+plot(LENGTH~WEIGHT,data=bears,pch=19)
+```
+
+```{r}
+model.5 <- lm(LENGTH~WEIGHT,data=bears)
+summary.lm(model.3)
+```
 
 
